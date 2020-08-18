@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.github.apps.ui.base.BaseViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.github.apps.ui.home.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/appbar_custom"
+            app:viewModel="@{(BaseViewModel)viewModel}" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_smed"
+            android:afterTextChanged="@{viewModel::afterTextSearchChanged}"
+            android:background="@drawable/bg_rounded_stroke_grey_white_solid"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/padding_small"
+            android:hint="@string/label_hint_search_user"
+            android:padding="@dimen/padding_smlarge" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_smed"
+                android:background="@color/white"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:rvAnimation="@{true}"
+                app:rvOverScroll="@{false}"
+                app:setAdapter="@{viewModel.getAdapter()}"
+                tools:listitem="@layout/item_user" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:isVisible="@{viewModel.showProgressBar}" />
+
+            <TextView
+                style="@style/TextAppearance.Text.Medium"
+                isVisible="@{viewModel.isEmpty}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/label_empty_data"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_mls" />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

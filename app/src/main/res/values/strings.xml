@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Github User Search</string>
+    <string name="font_path_poppins">fonts/poppins/Poppins-Regular.ttf</string>
+    <string name="font_path_poppins_medium">fonts/poppins/Poppins-Medium.ttf</string>
+
+    <!-- GENERAL -->
+    <string name="label_history">History</string>
+    <string name="sample_lorem_medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</string>
+    <string name="sample_lorem_short">Lorem ipsum dolor sit amet, consectetur adipiscing</string>
+    <string name="empty_general">Empty Data</string>
+    <string name="content_empty_general">Are you sure this page is you looking for?</string>
+
+    <!-- DIALOG -->
+    <string name="please_wait">Please wait……</string>
+
+    <!--ALERT DIALOG -->
+    <string name="alert_downloading">Downloading</string>
+    <string name="alert_downloading_message">An error occurs. Please try again!</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="alert_cancel_button">Cancel</string>
+    <string name="no_internet_title">No internet</string>
+    <string name="no_internet_description">Please check your connection!</string>
+    <string name="error_fetching_remote_data_title">Error fetching data from server!</string>
+    <string name="error_fetching_remote_data_description">An error occurs while fetching data from server. Please try again later!</string>
+    <string name="font_path_grotesk">fonts/grotesk/Tele-GroteskNor.ttf</string>
+    <string name="label_hint_search_user">Search user</string>
+    <string name="label_empty_data">Data Kosong</string>
+
+</resources>
